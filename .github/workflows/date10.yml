@@ -1,0 +1,11 @@
+name: Fuso Horário do Brasil
+
+on: [push]
+
+jobs:
+  exibir_fuso_horario:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Chamada para World Time API
+        run: |
+          curl -s 'http://worldtimeapi.com/timezone/America/Sao_Paulo' | jq -r '.datetime_string'
