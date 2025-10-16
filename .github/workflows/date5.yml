@@ -1,0 +1,25 @@
+name: Release Nightly Snapshot
+
+on:
+  schedule:
+  - cron: "0 0 * * *"
+
+jobs:
+  build:
+    name: Release Nightly Snapshot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master Branch
+        uses: actions/checkout@v2
+        with:
+          ref: 'master'
+      - name: Create Release
+        id: nightly-snapshot
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: 'nightly snapshot'
+          release_name: 'nightly snapshot'
+          draft: false
+          prerelease: false
