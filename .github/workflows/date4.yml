@@ -1,0 +1,13 @@
+name: Exemplo de Data
+
+on: [push]
+
+jobs:
+  exibir_data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exibir data atual
+        run: echo "A data atual é $(date '+%Y-%m-%d')"
+
+      - name: Exibir data e hora atuais
+        run: date
