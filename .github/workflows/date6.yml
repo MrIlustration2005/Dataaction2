@@ -1,0 +1,14 @@
+name: Exibir Data e Hora
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  show_datetime:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exibir Data e Hora Atual
+        run: date
+      - name: Exibir Data e Hora em Formato Personalizado
+        run: date '+%Y-%m-%d %H:%M:%S'
