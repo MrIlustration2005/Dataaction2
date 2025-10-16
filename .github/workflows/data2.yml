@@ -1,0 +1,12 @@
+name: Exemplo de Ação
+
+on: [push]
+
+jobs:
+  exibir_informacao:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exibir mensagem
+        run: |
+          echo "Olá, mundo! Esta é uma mensagem no GitHub Actions."
+          echo "Data de execução: ${{ github.run_date }}"
