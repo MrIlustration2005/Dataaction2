@@ -1,0 +1,13 @@
+name: Fuso Horário do Brasil
+
+on: [push]
+
+jobs:
+  exibir_fuso_horario:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Executar o comando com TZ
+        run: |
+          export TZ=America/Sao_Paulo
+          echo "O fuso horário do servidor é:"
+          date
