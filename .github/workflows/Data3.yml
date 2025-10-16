@@ -1,0 +1,10 @@
+name: Exibir data
+
+on: [push]
+
+jobs:
+  exibir_data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exibir a data atual
+        run: echo "A data é $(date +%Y-%m-%d)"
